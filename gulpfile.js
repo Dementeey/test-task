@@ -21,6 +21,7 @@ const path = {
     html: 'build/',
     js: './build/js/',
     css: 'build/css/',
+    fonts: 'build/fonts/',
     img: 'build/',
     svg: 'build/img/'
   },
@@ -28,6 +29,7 @@ const path = {
     html: 'src/**/*.html',
     js: 'src/js/*.js',
     style: 'src/css/*.css',
+    fonts: 'src/fonts/**/*.*',
     img: 'src/img/**/*.+(png|jpg)',
     svg: 'src/img/**/*.svg'
   },
@@ -35,6 +37,7 @@ const path = {
     html: 'src/**/*.html',
     js: 'src/**/*.js',
     style: 'src/css/*.css',
+    fonts: 'src/fonts/**/*.*',
     img: 'src/img/**/*.+(png|jpg)',
     svg: 'src/img/**/*.svg'
   },
@@ -129,16 +132,11 @@ gulp.task('fonts:build', function() {
 
 });
 
-gulp.task('video:build', function () {
-  return gulp.src(path.src.video)
-    .pipe(gulp.dest(path.build.video))
-    .pipe(reload({stream: true}));
-});
-
 gulp.task('build', [
   'html:build',
   'js:build',
   'style:build',
+  'fonts:build',
   'image:build',
   'imageSvg:build'
 ]);
@@ -158,6 +156,9 @@ gulp.task('watch', function(){
   });
   watch([path.watch.svg], function(event, cb) {
     gulp.start('imageSvg:build');
+  });
+  watch([path.watch.fonts], function(event, cb) {
+    gulp.start('fonts:build');
   });
 });
 
