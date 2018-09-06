@@ -483,3 +483,88 @@
 }
 
 /* Promo end ---------------------- */
+
+
+/* Footer ---------------------- */
+
+.page-footer {
+  position: relative;
+
+  width: 100%;
+  height: 90px;
+
+  background-color: #202020;
+}
+
+.page-footer__go-to-top {
+  position: absolute;
+  top: -26px;
+  right: 50px;
+
+  width: 52px;
+  height: 52px;
+
+  background-color: #e74c3c;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.page-footer__go-to-top::before,
+.page-footer__go-to-top::after {
+  content: "";
+  position: absolute;
+  top: 25px;
+
+  width: 14px;
+  height: 2px;
+
+  background-color: #ffffff;
+}
+
+.page-footer__go-to-top::before {
+  left: 14px;
+
+  transform: rotate(-45deg);
+}
+
+.page-footer__go-to-top::after {
+  right: 14px;
+
+  transform: rotate(45deg);
+}
+
+.page-footer__inner {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 1170px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.social {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 290px;
+}
+
+
+.social__link svg path {
+  fill: #999999;
+}
+
+.social__link:hover svg path {
+  fill: #e74c3c;
+}
+
+.copyright {
+  font-size: 14px;
+  font-family: "open_sanssemibold";
+  color: #999999;
+  text-transform: capitalize;
+}
+
+
+/* Footer end ---------------------- */
